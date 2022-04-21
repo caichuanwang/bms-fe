@@ -14,9 +14,9 @@ This Starter utilizes React, Redux, React Query, React Hooks, Typescript, Axios 
 Clone this repo and install all dependencies
 
 ```
- git clone https://github.com/ychengcloud/react-vite-admin.git
+ git clone https://github.com/caichuanwang/bms-fe.git
 
- cd react-vite-admin
+ cd bms-fe
 
  yarn install
 ```
