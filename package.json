@@ -1,0 +1,67 @@
+{
+  "name": "react-vite-admin",
+  "version": "1.0.0",
+  "description": "This Starter utilizes React, Redux, React Query, React Hooks, Typescript, Axios And Vite.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caichuanwang/react-vite-admin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caichuanwang/react-vite-admin/issues"
+  },
+  "homepage": "https://github.com/caichuanwang/react-vite-admin#readme",
+  "dependencies": {
+    "@ant-design/charts": "^1.3.6",
+    "@ant-design/pro-field": "^1.34.1",
+    "@ant-design/pro-form": "^1.61.0",
+    "@ant-design/pro-layout": "^6.34.8",
+    "@ant-design/pro-table": "^2.70.0",
+    "@reduxjs/toolkit": "^1.8.1",
+    "antd": "^4.19.3",
+    "autoprefixer": "^10.2.4",
+    "axios": "^0.21.0",
+    "classnames": "^2.2.6",
+    "driver.js": "^0.9.8",
+    "history": "^5.0.0",
+    "mockjs": "^1.1.0",
+    "qs": "^6.9.6",
+    "react": "^18.0.0",
+    "react-app-polyfill": "^1.0.4",
+    "react-dev-utils": "^9.1.0",
+    "react-dom": "^17.0.0",
+    "react-error-boundary": "^3.1.0",
+    "react-helmet": "^5.2.1",
+    "react-intl": "^5.12.5",
+    "react-query": "^3.9.9",
+    "react-redux": "^7.2.7",
+    "react-router": "^6.2.2",
+    "react-router-dom": "^6.2.2",
+    "recharts": "^2.1.9",
+    "stringify": "^5.2.0",
+    "tailwindcss": "^2.0.3"
+  },
+  "devDependencies": {
+    "typescript": "4.1.2",
+    "@types/classnames": "^2.2.9",
+    "@types/node": "^14.14.31",
+    "@types/qs": "^6.9.5",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/recharts": "^1.8.21",
+    "@vitejs/plugin-react-refresh": "^1.1.0",
+    "less": "^4.1.1",
+    "vite": "^2.0.1",
+    "vite-aliases": "^0.5.1",
+    "vite-plugin-imp": "^2.0.5",
+    "vite-plugin-mock": "^2.2.4",
+    "vite-plugin-style-import": "^0.9.1",
+    "vite-plugin-svgr": "^0.2.0"
+  }
+}
