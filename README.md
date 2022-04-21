@@ -24,7 +24,7 @@ Clone this repo and install all dependencies
 ## Development
 
 ```
-yarn dev
+yarn start
 ```
 
 ## Build
