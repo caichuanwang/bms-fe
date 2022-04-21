@@ -19,7 +19,6 @@ export type GlobalHeaderRightProps = {
 
 const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   const { username, avatar } = useUserRedux();
-
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -33,20 +32,17 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
         replace: true,
       });
     }
+    localStorage.removeItem('token');
   };
 
-  // const onMenuClick = useCallback(
-  //   (event) => {
-  //     const { key } = event;
-  //     if (key === 'logout' && user) {
-  //       setUser({ ...user, logged: false });
-  //       loginOut();
-  //       return;
-  //     }
-  //     navigate(`/account/${key}`);
-  //   },
-  //   [user, setUser]
-  // );
+  const onMenuClick = (event: any) => {
+    const { key } = event;
+    if (key === 'logout') {
+      loginOut();
+      return;
+    }
+    navigate(`/account/${key}`);
+  };
 
   const loading = (
     <span className={`account`}>
@@ -60,16 +56,8 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     </span>
   );
 
-  // if (!user) {
-  //   return loading;
-  // }
-
-  // if (!username) {
-  //   return loading;
-  // }
-
   const menuHeaderDropdown = (
-    <Menu className={'menu'} selectedKeys={[]}>
+    <Menu className={'menu'} selectedKeys={[]} onClick={onMenuClick}>
       <Menu.Item key="logout">
         <LogoutOutlined />
         退出登录
