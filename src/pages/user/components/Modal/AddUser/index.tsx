@@ -4,10 +4,10 @@ import useModalState from './index.hooks';
 import { message } from 'antd';
 import { http } from '../../../../../enum/httpStatus';
 import BaseForm from '../BaseForm';
-import { fm } from '../../../../../locales';
+import { useLocale } from '../../../../../locales';
 const AddUser = () => {
   const formRef = useRef<any>();
-
+  const { fm } = useLocale();
   const mutation = useCreate('/v1/user/add');
   const { visible, refreshTable, setModalStatus } = useModalState('add_user');
 
@@ -15,9 +15,8 @@ const AddUser = () => {
     formRef.current
       ?.validateFieldsReturnFormatValue?.()
       .then(async (values: FormData) => {
-        console.log(values);
         const res: any = await mutation.mutateAsync(values);
-        if (res.statue === http.statusOK) {
+        if (res) {
           message.success(fm('global.tips.addSuccess'));
           setModalStatus(false);
           formRef.current?.resetFields();

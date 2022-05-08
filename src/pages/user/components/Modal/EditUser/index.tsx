@@ -16,7 +16,6 @@ const EditUser = () => {
     formRef.current
       ?.validateFieldsReturnFormatValue?.()
       .then(async (values: FormData) => {
-        console.log(values);
         const res: any = await mutation.mutateAsync({
           ...values,
           id: tableSelectData.id,

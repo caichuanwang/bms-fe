@@ -16,7 +16,7 @@ const MyModal: React.FC<MyModalProps> = (props) => {
   } = props;
 
   const basicSet = {
-    title: 'DMP',
+    title: 'BMS',
     width: width || 800,
     closable: true,
     keyboard: false,

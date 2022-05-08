@@ -7,8 +7,11 @@ import User from '../pages/user';
 import WrapperRouteComponent from './config';
 import { useRoutes, RouteObject } from 'react-router-dom';
 import Role from '@/pages/role';
+
 const NotFound = lazy(() => import('@/pages/404'));
 const Project = lazy(() => import('@/pages/project'));
+const Book = lazy(() => import('../pages/bookType'));
+const BookInfo = lazy(() => import('../pages/bookManager'));
 
 const routeList: RouteObject[] = [
   {
@@ -48,6 +51,22 @@ const routeList: RouteObject[] = [
         element: (
           <WrapperRouteComponent>
             <Role />
+          </WrapperRouteComponent>
+        ),
+      },
+      {
+        path: '/bookType',
+        element: (
+          <WrapperRouteComponent>
+            <Book />
+          </WrapperRouteComponent>
+        ),
+      },
+      {
+        path: '/BookInfo',
+        element: (
+          <WrapperRouteComponent>
+            <BookInfo />
           </WrapperRouteComponent>
         ),
       },

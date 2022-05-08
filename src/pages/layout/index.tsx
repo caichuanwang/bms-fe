@@ -1,12 +1,19 @@
 import React, { FC, useEffect, Suspense, useCallback, useState } from 'react';
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import { MenuList, MenuChild } from '@/models/menu.interface';
 import { useGuide } from '../guide/useGuide';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useGetCurrentMenus } from '@/api';
 import type { MenuDataItem } from '@ant-design/pro-layout';
 import ProLayout from '@ant-design/pro-layout';
-import { SmileOutlined, HeartOutlined, FrownOutlined } from '@ant-design/icons';
+import {
+  SmileOutlined,
+  HeartOutlined,
+  FrownOutlined,
+  BookOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useLocale } from '@/locales';
 import { createBrowserHistory } from 'history';
@@ -18,10 +25,12 @@ import useUserRedux from './index.redux';
 
 const history = createBrowserHistory();
 
-const IconMap: { [key: string]: React.ReactNode } = {
+export const IconMap: { [key: string]: React.ReactNode } = {
   smile: <SmileOutlined />,
   heart: <HeartOutlined />,
   frown: <FrownOutlined />,
+  book: <BookOutlined />,
+  user: <UserOutlined />,
 };
 
 const LayoutPage: FC = ({ children }) => {

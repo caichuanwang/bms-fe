@@ -2,15 +2,16 @@ import ProTable, { ActionType } from '@ant-design/pro-table';
 import { Button, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import React, { useCallback, useEffect, useRef } from 'react';
-import axios, { useGetList } from '../../api/request';
+import axios from '../../api/request';
 import { http } from '../../enum/httpStatus';
 import { IUser, tableHeaderColumns } from './tableHeader';
 import useModalState from './components/Modal/AddUser/index.hooks';
 import { useDelete } from '../../api/request';
 import UserModal from './components/Modal';
 import { EDIT_USER } from './components/Modal/EditUser';
-import { fm } from '../../locales';
+import { useLocale } from '../../locales';
 const User = () => {
+  const { fm } = useLocale();
   const { refresh, setModalStatus, setSelectTableData } =
     useModalState('add_user');
   const { setModalStatus: setEditUserModalStatus } = useModalState(EDIT_USER);
@@ -45,7 +46,7 @@ const User = () => {
   }, [refresh]);
 
   const deleteUser = async (record: any) => {
-    const res: any = await mutation.mutateAsync(record.id);
+    const res: any = await mutation.mutateAsync({ id: record.id });
     if (res) {
       message.success(fm('global.tips.deleteSuccess'));
     }
@@ -59,6 +60,8 @@ const User = () => {
   return (
     <>
       <ProTable
+        rowKey="id"
+        key="id"
         columns={tableHeaderColumns(editUser, deleteUser)}
         request={getTableData}
         actionRef={actionRef}

@@ -8,4 +8,7 @@ export const zhCN_menu = {
   'menu.notfound': '404',
   'menu.user': '用户设置',
   'menu.role': '角色设置',
+  'menu.manager': '管理',
+  'menu.bookManager': '📚管理',
+  'menu.bookTypeManager': '📚类型管理',
 };

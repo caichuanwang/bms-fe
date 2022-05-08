@@ -10,10 +10,11 @@ import React from 'react';
 import { emailValidate } from '../../../../../utils/form';
 import { IBaseForm } from './index.d';
 import { useAxios } from '../../../../../api/request';
-import { fm } from '../../../../../locales';
+import { useLocale } from '../../../../../locales';
 
 const BaseForm: React.FC<IBaseForm> = (props) => {
   const axios = useAxios();
+  const { fm } = useLocale();
   const getRoleOptions = async () => {
     return axios.get('/v1/role/option').then((res) => res as any);
   };

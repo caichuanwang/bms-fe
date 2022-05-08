@@ -12,6 +12,7 @@ export const zhCN_globalTips = {
   'global.tips.authorize': '授权',
   'global.tips.delete': '删除',
   'global.tips.create': '新建',
+  'global.tips.add': '新增',
   'global.tips.modify': '修改',
   'global.tips.edit': '编辑',
   'global.tips.search': '搜索',
@@ -27,4 +28,5 @@ export const zhCN_globalTips = {
   'global.404': '请求不存在',
   'global.400': '请求参数有误',
   'global.requestError': '请求错误',
+  'global.serviceError': '服务器错误',
 };

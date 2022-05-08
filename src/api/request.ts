@@ -12,7 +12,7 @@ import { Object2GetParams } from '../utils/url';
 const history = createBrowserHistory();
 
 console.log('baseurl:', import.meta.env.VITE_BASE_URL);
-const axios = Axios.create({
+export const axios = Axios.create({
   baseURL: import.meta.env.VITE_BASE_URL + '',
   timeout: 1000,
   headers: {
@@ -66,6 +66,12 @@ axios.interceptors.response.use(
           break;
         case 400:
           message.error(error.response.data?.message || fm('global.400'));
+          break;
+
+        case 500:
+          message.error(
+            error.response.data?.message || fm('global.serviceError')
+          );
           break;
         default:
           message.error(

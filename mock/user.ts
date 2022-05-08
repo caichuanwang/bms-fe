@@ -1,11 +1,39 @@
+import React from 'react';
 import { MockMethod } from 'vite-plugin-mock';
+export interface IMenuList {
+  path: string;
+  name: string;
+  locale: string;
+  icon?: string;
+  children?: Omit<IMenuList, 'children'>[];
+}
 
-const mockMenuList = [
+const mockMenuList: IMenuList[] = [
   {
     path: '/dashboard',
     name: '面板',
     locale: 'menu.dashboard',
     icon: 'heart',
+  },
+  {
+    path: '/',
+    name: 'Manager',
+    icon: 'book',
+    locale: 'menu.manager',
+    children: [
+      {
+        path: '/bookType',
+        name: 'bookTypeManager',
+        icon: 'book',
+        locale: 'menu.bookTypeManager',
+      },
+      {
+        path: '/bookInfo',
+        name: 'bookManager',
+        icon: 'book',
+        locale: 'menu.bookManager',
+      },
+    ],
   },
   {
     path: '/project',
@@ -39,19 +67,17 @@ const mockMenuList = [
     path: '/setting',
     name: 'user',
     locale: 'menu.user',
-    icon: 'smile',
+    icon: 'user',
     children: [
       {
         path: '/user',
         name: 'user',
         locale: 'menu.user',
-        icon: 'smile',
       },
       {
         path: '/role',
         name: 'role',
         locale: 'menu.role',
-        icon: 'smile',
       },
     ],
   },
