@@ -11,7 +11,8 @@ import Role from '@/pages/role';
 const NotFound = lazy(() => import('@/pages/404'));
 const Project = lazy(() => import('@/pages/project'));
 const Book = lazy(() => import('../pages/bookType'));
-const BookInfo = lazy(() => import('../pages/bookManager'));
+const BookInfo = lazy(() => import('../pages/bookInfo'));
+const Borrow = lazy(() => import('../pages/borrow'));
 
 const routeList: RouteObject[] = [
   {
@@ -67,6 +68,14 @@ const routeList: RouteObject[] = [
         element: (
           <WrapperRouteComponent>
             <BookInfo />
+          </WrapperRouteComponent>
+        ),
+      },
+      {
+        path: '/borrowManager',
+        element: (
+          <WrapperRouteComponent>
+            <Borrow />
           </WrapperRouteComponent>
         ),
       },

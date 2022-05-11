@@ -12,6 +12,7 @@ import { zhCN_project } from './project';
 import zhCN_role from './role';
 import zhCN_user from './user';
 import zhCN_book from './book';
+import zhCN_borrow from './borrow';
 
 const zh_CN = {
   ...zhCN_account,
@@ -28,6 +29,7 @@ const zh_CN = {
   ...zhCN_role,
   ...zhCN_user,
   ...zhCN_book,
+  ...zhCN_borrow,
 };
 
 export default zh_CN;

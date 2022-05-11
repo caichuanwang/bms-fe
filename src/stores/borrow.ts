@@ -1,21 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IBookInfo } from '../pages/bookInfo/components/bookInfo/components/Table/index.data';
+import { IBorrow } from '../api/type/login';
 import { ModalState } from '../types';
 
-interface IBookInfoRedux {
+interface IBorrowRedux {
   modalStatus: ModalState;
   refreshTable: boolean;
-  selectData: IBookInfo | null;
+  selectData: IBorrow | null;
 }
 
-const initialState: IBookInfoRedux = {
+const initialState: IBorrowRedux = {
   modalStatus: {},
   refreshTable: false,
   selectData: null,
 };
 
-const bookInfoRedux = createSlice({
-  name: 'bookInfoRedux',
+const borrowRedux = createSlice({
+  name: 'borrowRedux',
   initialState,
   reducers: {
     initModalStatus: (state, action: PayloadAction<ModalState>) => {
@@ -30,7 +30,7 @@ const bookInfoRedux = createSlice({
     refreshTableRedux: (state) => {
       state.refreshTable = !state.refreshTable;
     },
-    setSelectDataRedux: (state, action: PayloadAction<IBookInfo>) => {
+    setSelectDataRedux: (state, action: PayloadAction<IBorrow>) => {
       state.selectData = action.payload;
     },
   },
@@ -40,5 +40,5 @@ export const {
   updateModalState,
   refreshTableRedux,
   setSelectDataRedux,
-} = bookInfoRedux.actions;
-export default bookInfoRedux.reducer;
+} = borrowRedux.actions;
+export default borrowRedux.reducer;

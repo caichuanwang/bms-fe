@@ -156,13 +156,12 @@ const useGetList = <T>(key: string, url: string, params?: any) => {
   return useQuery(key, () => service());
 };
 
-const useGetWithParams = <T, P>(key: string, url: string, params?: T) => {
+const useGetWithParams = <T, P>(url: string) => {
   const axios = useAxios();
-  const service = async () => {
+  return useMutation(async (params: T) => {
     const data: P = await axios.get(`${url}`, { params });
     return data;
-  };
-  return useQuery(key, () => service());
+  });
 };
 
 const useGet = <T>(key: string, url: string) => {

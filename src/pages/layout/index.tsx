@@ -13,6 +13,7 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
+  SwapOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useLocale } from '@/locales';
@@ -31,6 +32,7 @@ export const IconMap: { [key: string]: React.ReactNode } = {
   frown: <FrownOutlined />,
   book: <BookOutlined />,
   user: <UserOutlined />,
+  borrow: <SwapOutlined />,
 };
 
 const LayoutPage: FC = ({ children }) => {

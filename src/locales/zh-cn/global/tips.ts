@@ -22,6 +22,8 @@ export const zhCN_globalTips = {
   'global.tips.deleteSuccess': '删除成功！',
   'global.tips.updateSuccess': '更新成功！',
   'global.tips.addSuccess': '添加成功！',
+  'global.tips.borrowSuccess': '添加成功！',
+  'global.tips.returnSuccess': '添加成功！',
   'global.placeholderInp': '请输入',
   'global.placeholderSel': '请选择',
   'global.placeholderWri': '请填写',

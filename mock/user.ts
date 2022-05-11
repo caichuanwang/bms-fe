@@ -36,6 +36,20 @@ const mockMenuList: IMenuList[] = [
     ],
   },
   {
+    path: '/borrow',
+    name: 'borrowManager',
+    icon: 'borrow',
+    locale: 'menu.borrowManager',
+    children: [
+      {
+        path: '/borrowManager',
+        name: 'borrowManager',
+        icon: 'borrow',
+        locale: 'menu.borrowManager',
+      },
+    ],
+  },
+  {
     path: '/project',
     name: 'Project',
     icon: 'smile',
