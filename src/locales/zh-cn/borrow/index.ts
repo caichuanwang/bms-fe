@@ -18,4 +18,10 @@ export default {
   'borrow.return': '归还',
   'borrow.returned': '已归还',
   'borrow.willReturn': '未归还',
+  'borrow.borrowBook': '借书',
+  'borrow.detail': '详情',
+  'borrow.love': '收藏',
+  'borrow.verb': '推荐书单',
+  'borrow.tipSuccess': '借书请求已成功发送，等待管理员审核',
+  'borrow.top': 'Top书单',
 };

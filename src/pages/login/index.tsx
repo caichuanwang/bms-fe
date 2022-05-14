@@ -2,12 +2,9 @@ import React, { FC } from 'react';
 import { Button, Checkbox, Form, Input, message } from 'antd';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { LoginParams } from '@/models/login';
-import { Location } from 'history';
 import { useLogin } from '@/api';
-import { http } from '../../enum/httpStatus';
 import styles from './index.module.less';
 import { ReactComponent as LogoSvg } from '@/assets/logo/logo.svg';
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setLogged } from '../../stores/user';
 import { ILoginResult } from '../../api/type/login';
@@ -25,9 +22,11 @@ const LoginForm: FC = () => {
 
   const onFinished = async (form: LoginParams) => {
     const result: ILoginResult = await loginMutation.mutateAsync(form);
+
     if (result) {
       localStorage.setItem('token', result.data.token ?? '');
-      localStorage.setItem('username', form.user_name);
+      localStorage.setItem('username', result.data.userName);
+      localStorage.setItem('userId', result.data.userId);
       dispatch(setLogged(true));
       const from = (location.state as { from: string })?.from || {
         pathname: '/user',

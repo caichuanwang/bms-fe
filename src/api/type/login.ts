@@ -3,6 +3,8 @@ export interface ILoginResult {
 }
 export interface ITokenResult {
   token: string;
+  userName: string;
+  userId: string;
 }
 
 export interface IBookTypeTree {

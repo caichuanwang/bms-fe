@@ -12,7 +12,7 @@ export interface CurrentUserResult {
 
 export interface User {
   username: string;
-
+  userId: string;
   /** menu list for init tagsView */
   menuList: MenuChild[];
 

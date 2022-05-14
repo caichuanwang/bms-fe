@@ -13,6 +13,7 @@ const Project = lazy(() => import('@/pages/project'));
 const Book = lazy(() => import('../pages/bookType'));
 const BookInfo = lazy(() => import('../pages/bookInfo'));
 const Borrow = lazy(() => import('../pages/borrow'));
+const BookList = lazy(() => import('../pages/BookList'));
 
 const routeList: RouteObject[] = [
   {
@@ -76,6 +77,14 @@ const routeList: RouteObject[] = [
         element: (
           <WrapperRouteComponent>
             <Borrow />
+          </WrapperRouteComponent>
+        ),
+      },
+      {
+        path: '/bookList',
+        element: (
+          <WrapperRouteComponent>
+            <BookList />
           </WrapperRouteComponent>
         ),
       },

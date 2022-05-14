@@ -16,6 +16,7 @@ const initialState: User = {
   logged: false,
   menuList: [],
   username: localStorage.getItem('username') || '',
+  userId: localStorage.getItem('userId') || '',
   role: (localStorage.getItem('username') || '') as Role,
   avatar:
     'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
