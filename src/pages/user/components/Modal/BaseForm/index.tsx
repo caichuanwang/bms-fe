@@ -6,7 +6,7 @@ import ProForm, {
   ProFormText,
   ProFormTextArea,
 } from '@ant-design/pro-form';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { emailValidate } from '../../../../../utils/form';
 import { IBaseForm } from './index.d';
 import { useAxios } from '../../../../../api/request';
@@ -18,6 +18,10 @@ const BaseForm: React.FC<IBaseForm> = (props) => {
   const getRoleOptions = async () => {
     return axios.get('/v1/role/option').then((res) => res as any);
   };
+  useEffect(() => {
+    getRoleOptions();
+  }, []);
+
   return (
     <ModalForm
       title={props.title}
@@ -39,6 +43,18 @@ const BaseForm: React.FC<IBaseForm> = (props) => {
             {
               required: true,
               message: fm('global.placeholderWri') + fm('user.userName'),
+            },
+          ]}
+        />
+        <ProFormText
+          width="sm"
+          name="user_password"
+          label={fm('user.userPassword')}
+          placeholder={fm('global.placeholderInp') + fm('user.userPassword')}
+          rules={[
+            {
+              required: true,
+              message: fm('global.placeholderWri') + fm('user.userPassword'),
             },
           ]}
         />

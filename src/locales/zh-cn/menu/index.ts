@@ -13,4 +13,5 @@ export const zhCN_menu = {
   'menu.bookTypeManager': '📚类型管理',
   'menu.borrowManager': '借阅管理',
   'menu.bookList': '图书列表',
+  'menu.myBookList': '书单',
 };

@@ -16,4 +16,9 @@ export default {
   'book.context': '内容简介',
   'book.photo': '封面',
   'book.pageNum': '页数',
+  'book.addList': '创建书单',
+  'book.bookListName': '书单名称',
+  'book.list.remake': '书单简介',
+  'book.list.addTitle': '新增书单',
+  'book.list.name': '书单名',
 };

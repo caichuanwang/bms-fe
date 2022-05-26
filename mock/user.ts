@@ -10,10 +10,24 @@ export interface IMenuList {
 
 const mockMenuList: IMenuList[] = [
   {
-    path: '/bookList',
+    path: '/',
     name: 'bookList',
     locale: 'menu.bookList',
     icon: 'heart',
+    children: [
+      {
+        path: '/bookList',
+        name: 'bookList',
+        locale: 'menu.bookList',
+        icon: 'heart',
+      },
+      {
+        path: '/myBookList',
+        name: 'myBookList',
+        locale: 'menu.myBookList',
+        icon: 'heart',
+      },
+    ],
   },
   {
     path: '/dashboard',

@@ -11,6 +11,7 @@ import BookListBorrowModal, {
 } from './components/Modal/BookListBorrow';
 import { useGet, useGetWithParams } from '../../api/request';
 import useModalStateHooks from './index.redux';
+import AllModalManager from './components/Modal';
 const BookList = () => {
   const { data: topListData, refetch } = useGet<{ data: IBookInfo[] }>(
     'borrowTop',
@@ -60,18 +61,6 @@ const BookList = () => {
           );
         })}
       </Space>
-      <Divider orientation="left">{fm('borrow.top')}</Divider>
-
-      <Space>
-        {topListData &&
-          topListData.data.map((e) => {
-            return (
-              <>
-                <BookItem item={e} />
-              </>
-            );
-          })}
-      </Space>
       <div style={{ textAlign: 'end' }}>
         <Pagination
           total={total}
@@ -82,7 +71,18 @@ const BookList = () => {
           showTotal={(total) => `共 ${total} 本`}
         />
       </div>
-      <BookListBorrowModal />
+      <Divider orientation="left">{fm('borrow.top')}</Divider>
+      <Space>
+        {topListData &&
+          topListData.data.map((e) => {
+            return (
+              <>
+                <BookItem item={e} />
+              </>
+            );
+          })}
+      </Space>
+      <AllModalManager />
     </>
   );
 };

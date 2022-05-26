@@ -27,3 +27,11 @@ export interface IBorrow {
   really_return_time: string;
   agree_borrow_time?: string;
 }
+export interface IMyBookList {
+  id: number;
+  name: string;
+  photo?: string;
+  userId?: number;
+  time?: string;
+  remake?: string;
+}

@@ -21,7 +21,8 @@ export default {
   'borrow.borrowBook': '借书',
   'borrow.detail': '详情',
   'borrow.love': '收藏',
-  'borrow.verb': '推荐书单',
+  'borrow.verb': '推荐书籍',
   'borrow.tipSuccess': '借书请求已成功发送，等待管理员审核',
-  'borrow.top': 'Top书单',
+  'borrow.top': 'Top书籍',
+  'borrow.selectBookList': '选择收藏的书单',
 };

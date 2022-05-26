@@ -1,6 +1,7 @@
 export default {
   'user.userList': '用户列表',
   'user.userName': '用户名',
+  'user.userPassword': '密码',
   'user.sex': '性别',
   'user.role': '角色',
   'user.birthday': '出生年月',
