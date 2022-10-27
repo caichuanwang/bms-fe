@@ -9,7 +9,6 @@ import { useRoutes, RouteObject } from 'react-router-dom';
 import Role from '@/pages/role';
 
 const NotFound = lazy(() => import('@/pages/404'));
-const Project = lazy(() => import('@/pages/project'));
 const Book = lazy(() => import('../pages/bookType'));
 const BookInfo = lazy(() => import('../pages/bookInfo'));
 const Borrow = lazy(() => import('../pages/borrow'));
@@ -30,14 +29,6 @@ const routeList: RouteObject[] = [
         element: (
           <WrapperRouteComponent>
             <Dashboard />
-          </WrapperRouteComponent>
-        ),
-      },
-      {
-        path: '/project/list',
-        element: (
-          <WrapperRouteComponent>
-            <Project />
           </WrapperRouteComponent>
         ),
       },

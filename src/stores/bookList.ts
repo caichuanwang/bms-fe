@@ -6,12 +6,14 @@ interface IBookListRedux {
   modalStatus: ModalState;
   refreshTable: boolean;
   selectData: IBookInfo | null;
+  selectBookList: string[];
 }
 
 const initialState: IBookListRedux = {
   modalStatus: {},
   refreshTable: false,
   selectData: null,
+  selectBookList: [],
 };
 
 const bookListRedux = createSlice({
@@ -33,6 +35,9 @@ const bookListRedux = createSlice({
     setSelectDataRedux: (state, action: PayloadAction<IBookInfo>) => {
       state.selectData = action.payload;
     },
+    setSelectBookListRedux: (state, action: PayloadAction<string[]>) => {
+      state.selectBookList = action.payload;
+    },
   },
 });
 export const {
@@ -40,5 +45,6 @@ export const {
   updateModalState,
   refreshTableRedux,
   setSelectDataRedux,
+  setSelectBookListRedux,
 } = bookListRedux.actions;
 export default bookListRedux.reducer;

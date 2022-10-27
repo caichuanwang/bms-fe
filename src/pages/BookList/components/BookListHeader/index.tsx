@@ -13,7 +13,7 @@ const BookListHeader: React.FC<IBookListHeader> = (props) => {
     <>
       <Input.Search
         size="large"
-        placeholder="input here"
+        placeholder="请输入想找的书籍名称"
         enterButton
         onPressEnter={handleClick}
       />

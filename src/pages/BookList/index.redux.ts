@@ -4,6 +4,7 @@ import {
   updateModalState,
   refreshTableRedux,
   setSelectDataRedux,
+  setSelectBookListRedux,
 } from '../../stores/bookList';
 import { RootState } from '../../stores';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
@@ -14,9 +15,11 @@ export interface IBookListReduxProps {
   visible: boolean;
   refresh: boolean;
   selectData: IBookInfo | null;
+  selectBookList: string[];
   setModalStatus: (status: boolean, btnId?: string) => void;
   refreshTable: () => void;
   setSelectData: (record: IBookInfo) => void;
+  setSelectBookList: (data: string[]) => void;
 }
 
 const useModalStateHooks = (modalName?: string): IBookListReduxProps => {
@@ -25,6 +28,7 @@ const useModalStateHooks = (modalName?: string): IBookListReduxProps => {
       visible: state.bookList.modalStatus[modalName ?? ''],
       refresh: state.bookList.refreshTable,
       selectData: state.bookList.selectData,
+      selectBookList: state.bookList.selectBookList,
     }),
     shallowEqual
   );
@@ -43,7 +47,16 @@ const useModalStateHooks = (modalName?: string): IBookListReduxProps => {
   const setSelectData = (record: IBookInfo) => {
     dispatch(setSelectDataRedux(record ?? {}));
   };
+  const setSelectBookList = (data: string[]) => {
+    dispatch(setSelectBookListRedux(data ?? []));
+  };
 
-  return { ...reduxState, setModalStatus, refreshTable, setSelectData };
+  return {
+    ...reduxState,
+    setModalStatus,
+    refreshTable,
+    setSelectData,
+    setSelectBookList,
+  };
 };
 export default useModalStateHooks;

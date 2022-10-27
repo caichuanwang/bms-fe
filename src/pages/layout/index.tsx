@@ -49,7 +49,7 @@ const LayoutPage: FC = ({ children }) => {
 
   useEffect(() => {
     if (location.pathname === '/') {
-      navigate('/dashboard');
+      navigate('/bookList');
     }
   }, [navigate, location]);
 
@@ -97,7 +97,6 @@ const LayoutPage: FC = ({ children }) => {
       {...settings}
       onCollapse={toggle}
       formatMessage={formatMessage}
-      onMenuHeaderClick={() => history.push('https://reactjs.org/')}
       headerTitleRender={(logo, title, props) => (
         <a className={styles.layoutPageHeader}>
           <LogoSvg />
@@ -132,7 +131,6 @@ const LayoutPage: FC = ({ children }) => {
         );
       }}
       menuDataRender={() => loopMenuItem(menuList)}
-      // menuDataRender={() => m}
       rightContentRender={() => <RightContent />}
       footerRender={() => <Footer />}
       collapsedButtonRender={() => {

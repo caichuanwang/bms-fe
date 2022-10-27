@@ -12,7 +12,7 @@ import { useCreate, useGet } from '../../../../../api/request';
 export const AddBookList = 'add-book-list';
 const AddBookListModal = () => {
   const { fm } = useLocale();
-  const { visible, selectData, setModalStatus, refreshTable } =
+  const { visible, selectData, selectBookList, setModalStatus, refreshTable } =
     useModalStatus(AddBookList);
   const formRef = React.useRef();
   const addMu = useCreate('/v1/bookList/set2BookList');
@@ -25,7 +25,7 @@ const AddBookListModal = () => {
       isbn: selectData?.isbn,
     });
     if (res) {
-      message.success(fm('borrow.tipSuccess'));
+      message.success(fm('borrow.collectSuccess'));
       handleCancel();
       refreshTable();
       return true;
@@ -49,6 +49,7 @@ const AddBookListModal = () => {
       >
         <ProForm.Group>
           <ProFormCheckbox.Group
+            initialValue={selectBookList}
             name="bookLists"
             layout="vertical"
             label=""

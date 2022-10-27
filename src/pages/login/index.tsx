@@ -29,7 +29,7 @@ const LoginForm: FC = () => {
       localStorage.setItem('userId', result.data.userId);
       dispatch(setLogged(true));
       const from = (location.state as { from: string })?.from || {
-        pathname: '/user',
+        pathname: '/bookList',
       };
       navigate(from);
     }
@@ -59,9 +59,6 @@ const LoginForm: FC = () => {
             rules={[{ required: true, message: '请输入密码！' }]}
           >
             <Input type="password" size="large" placeholder="密码" />
-          </Form.Item>
-          <Form.Item name="remember" valuePropName="checked">
-            <Checkbox>记住用户</Checkbox>
           </Form.Item>
           <Form.Item>
             <Button

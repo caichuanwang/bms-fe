@@ -31,7 +31,8 @@ const BookItem: React.FC<IBookItem> = (props) => {
   );
 
   const { fm } = useLocale();
-  const { setModalStatus, setSelectData } = useModalStateHooks();
+  const { setModalStatus, setSelectData, setSelectBookList } =
+    useModalStateHooks();
   const openBorrowBookModal = () => {
     setSelectData(props.item);
     setModalStatus(true, BookListBorrow);
@@ -39,11 +40,12 @@ const BookItem: React.FC<IBookItem> = (props) => {
   const openSelectBookist = () => {
     setSelectData(props.item);
     setModalStatus(true, AddBookList);
+    setSelectBookList(count?.data);
   };
 
   return (
     <>
-      <Badge.Ribbon text={<>收藏书单{count?.data}</>}>
+      <Badge.Ribbon text={<>收藏书单{count?.data.length}</>}>
         <Card
           hoverable
           style={{ width: 200 }}

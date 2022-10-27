@@ -25,4 +25,5 @@ export default {
   'borrow.tipSuccess': '借书请求已成功发送，等待管理员审核',
   'borrow.top': 'Top书籍',
   'borrow.selectBookList': '选择收藏的书单',
+  'borrow.collectSuccess': '收藏书单成功',
 };

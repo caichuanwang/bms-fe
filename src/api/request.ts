@@ -2,14 +2,11 @@ import { createContext, ReactNode } from 'react';
 import Axios, { AxiosInstance, AxiosTransformer } from 'axios';
 import { message } from 'antd';
 import { useContext } from 'react';
-import { createBrowserHistory } from 'history';
 import { useQuery, useMutation } from 'react-query';
 import qs from 'qs';
 import { http } from '../enum/httpStatus';
 import { fm } from '../locales';
 import { Object2GetParams } from '../utils/url';
-
-const history = createBrowserHistory();
 
 console.log('baseurl:', import.meta.env.VITE_BASE_URL);
 export const axios = Axios.create({
@@ -38,27 +35,28 @@ axios.interceptors.response.use(
     message.warning(`请求错误 ${response.statusText}: ${response}`);
 
     if (response.status === 401) {
-      history.push('/auth/login');
+      window.location.href = '/login';
     }
 
     return Promise.reject(new Error(response.statusText || 'Error'));
   },
   (error) => {
     if (error.response && error.response.status) {
+      console.log(error.response.status, '0000000000');
       switch (error.response.status) {
         // 401: 未登录
         // 未登录则跳转登录页面，并携带当前页面的路径
         // 在登录成功后返回当前页面，这一步需要在登录页操作。
         case 401:
-          message.error(error.response.data?.message || error.response.data);
-          history.push('/login');
+          window.location.href = '/login';
           break;
         // 403 token过期
         // 登录过期对用户进行提示
         // 清除本地token
         // 跳转登录页面
         case 403:
-          history.push('/login');
+          window.location.href = '/login';
+
           break;
         // 404请求不存在
         case 404:

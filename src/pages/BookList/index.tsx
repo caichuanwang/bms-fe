@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import BookListHeader from './components/BookListHeader';
 import axios from '../../api/request';
-import { Card, Divider, Pagination, Space, Spin } from 'antd';
-import { AxiosResponse } from 'axios';
+import { Divider, Pagination, Space, Spin } from 'antd';
 import { IBookInfo } from '../bookInfo/components/bookInfo/components/Table/index.data';
 import BookItem from './components/BookItem';
 import { fm } from '../../locales';
-import BookListBorrowModal, {
-  BookListBorrow,
-} from './components/Modal/BookListBorrow';
-import { useGet, useGetWithParams } from '../../api/request';
+import { useGet } from '../../api/request';
 import useModalStateHooks from './index.redux';
 import AllModalManager from './components/Modal';
 const BookList = () => {

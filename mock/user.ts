@@ -70,34 +70,6 @@ const mockMenuList: IMenuList[] = [
     ],
   },
   {
-    path: '/project',
-    name: 'Project',
-    icon: 'smile',
-    locale: 'menu.project',
-    children: [
-      {
-        path: '/project/list',
-        name: 'Project List',
-        locale: 'menu.project.list',
-        icon: 'smile',
-      },
-    ],
-  },
-  {
-    path: '/permission',
-    name: 'permission',
-    locale: 'menu.permission',
-    icon: 'smile',
-    children: [
-      {
-        path: '/permission/list',
-        name: 'permission list',
-        locale: 'menu.permission.list',
-        icon: 'smile',
-      },
-    ],
-  },
-  {
     path: '/setting',
     name: 'user',
     locale: 'menu.user',
