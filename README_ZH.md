@@ -20,14 +20,14 @@
 
 - 获取项目代码
 
-```
- git clone https://github.com/ychengcloud/react-vite-admin.git
+```ssh
+ git clone https://github.com/caichuanwang/bms-fe.git
 ```
 
 - 安装依赖
 
 ```
- cd react-vite-admin
+ cd bms-fe
 ```
 
 ```
@@ -57,7 +57,6 @@
 - [Antd Design](https://ant.design)
 - [Antd Design Pro](https://pro.ant.design/)
 - [Vite](https://vitejs.dev/)
-- [React Query](https://react-query.tanstack.com/)
 - [React antd admin](https://github.com/WinmezzZ/react-antd-admin.git)
 - [vue-vben-admin](https://github.com/anncwb/vue-vben-admin)
 
@@ -65,7 +64,7 @@
 
 ## 声明
 
-本项目旨在学习采用最新技术栈实现一个后台管理系统，不建议在生产环境下使用，仅供学习参考之用，本人不负责使用本项目产生的任何问题。
+本项目旨在学习采用最新技术栈实现一个图书后台管理系统，不建议在生产环境下使用，仅供学习参考之用，本人不负责使用本项目产生的任何问题。
 
 ## License
 
