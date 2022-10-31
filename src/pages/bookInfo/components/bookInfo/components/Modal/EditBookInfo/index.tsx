@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
 import useModalStatus from '../../../index.redux';
 import { useLocale } from '../../../../../../../locales';
 import ProForm, {
@@ -7,9 +7,8 @@ import ProForm, {
   ProFormInstance,
   ProFormText,
   ProFormTreeSelect,
-  ProFormUploadButton,
 } from '@ant-design/pro-form';
-import { message, TreeSelect, Image, Form } from 'antd';
+import { message, Image } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { useCreate, useGet } from '../../../../../../../api/request';
 import { RequestOptionsType } from '@ant-design/pro-utils';

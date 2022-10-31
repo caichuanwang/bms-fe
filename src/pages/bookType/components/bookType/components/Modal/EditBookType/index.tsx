@@ -7,12 +7,10 @@ import ProForm, {
   ProFormText,
   ProFormTreeSelect,
 } from '@ant-design/pro-form';
-import { message, TreeSelect } from 'antd';
+import { message } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { useCreate, useGet } from '../../../../../../../api/request';
-import { RequestOptionsType } from '@ant-design/pro-utils';
 import { IBookTypeTree } from '../../../../../../../api/type/login';
-import axios from '../../../../../../../api/request';
 
 export const editBookType = 'edit-book-type';
 const EditBookType = () => {

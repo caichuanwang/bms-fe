@@ -1,13 +1,14 @@
 import { message } from 'antd';
 import React, { useEffect, useRef } from 'react';
 import { useCreate } from '../../../../../api/request';
-import { http } from '../../../../../enum/httpStatus';
-import { fm } from '../../../../../locales';
+import { useLocale } from '../../../../../locales';
 import useModalState from '../AddUser/index.hooks';
 import BaseForm from '../BaseForm';
 
 export const EDIT_USER = 'edit_user';
 const EditUser = () => {
+  const { fm } = useLocale();
+
   const { visible, setModalStatus, tableSelectData, refreshTable } =
     useModalState(EDIT_USER);
   const formRef = useRef<any>();

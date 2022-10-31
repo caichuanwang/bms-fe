@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import ProTable, { ActionType, EditableProTable } from '@ant-design/pro-table';
+import { ActionType, EditableProTable } from '@ant-design/pro-table';
 import { useLocale } from '@/locales';
 import { IRole, tableHeaderColumns } from './tableHeader';
 import {
