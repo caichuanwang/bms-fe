@@ -2,7 +2,7 @@ import type { ProColumns, ActionType } from '@ant-design/pro-table';
 import { Button, Popconfirm } from 'antd';
 import React from 'react';
 import { ReactNode } from 'react';
-import { fm } from '../../locales';
+import { useLocale } from '../../locales';
 import { FormattedMessage } from 'react-intl';
 
 export interface IUser {
@@ -13,6 +13,8 @@ export const tableHeaderColumns = (
   edit: (record: IUser) => void,
   deleteUser: (record: IUser) => void
 ): ProColumns<IUser>[] => {
+  const { fm } = useLocale();
+
   return [
     {
       dataIndex: 'index',

@@ -3,7 +3,7 @@ import { Button, Popconfirm } from 'antd';
 import React from 'react';
 import { ReactNode } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { fm } from '../../../../locales';
+import { useLocale } from '../../../../locales';
 import { IBookInfo } from '../../../bookInfo/components/bookInfo/components/Table/index.data';
 
 export interface IBookList {
@@ -18,6 +18,8 @@ export const tableHeaderColumns = (
   // edit: (record: IBookList) => void,
   deleteUser: (record: IBookList) => void
 ): ProColumns<IBookList>[] => {
+  const { fm } = useLocale();
+
   return [
     {
       title: fm('book.list.name'),

@@ -4,11 +4,13 @@ import axios from '../../api/request';
 import { Divider, Pagination, Space, Spin } from 'antd';
 import { IBookInfo } from '../bookInfo/components/bookInfo/components/Table/index.data';
 import BookItem from './components/BookItem';
-import { fm } from '../../locales';
+import { useLocale } from '../../locales';
 import { useGet } from '../../api/request';
 import useModalStateHooks from './index.redux';
 import AllModalManager from './components/Modal';
 const BookList = () => {
+  const { fm } = useLocale();
+
   const { data: topListData, refetch } = useGet<{ data: IBookInfo[] }>(
     'borrowTop',
     '/v1/borrow/top'

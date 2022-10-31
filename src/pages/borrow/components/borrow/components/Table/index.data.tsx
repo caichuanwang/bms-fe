@@ -3,7 +3,7 @@ import { Button, Popconfirm, Space } from 'antd';
 import React from 'react';
 import { ReactNode } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { fm } from '../../../../../../locales';
+import { useLocale } from '../../../../../../locales';
 import { IBorrow } from '../../../../../../api/type/login';
 import { IBorrowStatus, IReturnStatus } from '../../../../../../enum/borrow';
 import Status from '../../../../../../components/Status';
@@ -22,6 +22,8 @@ export const tableHeaderColumns = (
   returnBook: (record: IBorrow) => void,
   borrowBook: (record: IBorrow) => void
 ): ProColumns<IBorrow>[] => {
+  const { fm } = useLocale();
+
   return [
     {
       title: fm('borrow.id'),
