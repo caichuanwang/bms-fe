@@ -51,7 +51,7 @@ const BookList = () => {
       <BookListHeader handleSearch={handleSearch} />
       <Divider orientation="left">{fm('borrow.verb')}</Divider>
       <Space>
-        {data.map((e) => {
+        {data?.map((e) => {
           return (
             <>
               <BookItem item={e} />
@@ -72,7 +72,7 @@ const BookList = () => {
       <Divider orientation="left">{fm('borrow.top')}</Divider>
       <Space>
         {topListData &&
-          topListData.data.map((e) => {
+          topListData.data?.map((e) => {
             return (
               <>
                 <BookItem item={e} />

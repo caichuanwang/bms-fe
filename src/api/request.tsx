@@ -5,7 +5,6 @@ import { useContext } from 'react';
 import { useQuery, useMutation } from 'react-query';
 import qs from 'qs';
 import { http } from '../enum/httpStatus';
-import { fm } from '../locales';
 import { Object2GetParams } from '../utils/url';
 
 console.log('baseurl:', import.meta.env.VITE_BASE_URL);
@@ -60,21 +59,17 @@ axios.interceptors.response.use(
           break;
         // 404请求不存在
         case 404:
-          message.error(error.response.data?.message || fm('global.404'));
+          message.error(error.response.data?.message);
           break;
         case 400:
-          message.error(error.response.data?.message || fm('global.400'));
+          message.error(error.response.data?.message);
           break;
 
         case 500:
-          message.error(
-            error.response.data?.message || fm('global.serviceError')
-          );
+          message.error(error.response.data?.message);
           break;
         default:
-          message.error(
-            error.response.data?.message || fm('global.requestError')
-          );
+          message.error(error.response.data?.message);
       }
     }
     return Promise.reject(error);
@@ -140,7 +135,7 @@ const transformSorter = (sorter: any) => {
   return result;
 };
 
-const useGetList = <T>(key: string, url: string, params?: any) => {
+const useGetList = <T,>(key: string, url: string, params?: any) => {
   const axios = useAxios();
   const service = async () => {
     const data: T = await axios.post(`${url}`, {
@@ -162,7 +157,7 @@ const useGetWithParams = <T, P>(url: string) => {
   });
 };
 
-const useGet = <T>(key: string, url: string) => {
+const useGet = <T,>(key: string, url: string) => {
   const axios = useAxios();
   const service = async () => {
     const data: T = await axios.get(`${url}`);
@@ -179,7 +174,7 @@ const useCreate = <T, U>(url: string) => {
   });
 };
 
-const useUpdate = <T>(url: string) => {
+const useUpdate = <T,>(url: string) => {
   const axios = useAxios();
   return useMutation(async (item: T) => {
     const data: T = await axios.post(`${url}`, item);
@@ -187,7 +182,7 @@ const useUpdate = <T>(url: string) => {
   });
 };
 
-const useDelete = <T>(url: string) => {
+const useDelete = <T,>(url: string) => {
   const axios = useAxios();
   return useMutation(async (params: Object) => {
     const data: T = await axios.delete(`${url}${Object2GetParams(params)}`);

@@ -27,8 +27,3 @@ export const useLocale = () => {
     fm,
   };
 };
-
-export const fm = (id: Id) => {
-  const { fm: f } = useLocale();
-  return f(id);
-};
