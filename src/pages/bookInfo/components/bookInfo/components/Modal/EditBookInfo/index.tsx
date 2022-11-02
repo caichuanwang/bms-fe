@@ -13,6 +13,7 @@ import { PlusCircleOutlined } from '@ant-design/icons';
 import { useCreate, useGet } from '../../../../../../../api/request';
 import { RequestOptionsType } from '@ant-design/pro-utils';
 import { last } from 'lodash';
+
 export const editBookInfo = 'edit-book-type';
 const EditBookInfo = () => {
   const { fm } = useLocale();
@@ -159,7 +160,7 @@ const EditBookInfo = () => {
           /> */}
           <Image
             width={200}
-            src={`http://localhost:8888/static/${last(
+            src={`http://${location.hostname}:8888/static/${last(
               selectData?.photo?.split('/')
             )}`}
           />
