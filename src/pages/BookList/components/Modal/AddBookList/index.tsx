@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import useModalStatus from '../../../index.redux';
 import { useLocale } from '../../../../../locales';
-import ProForm, {
-  ModalForm,
-  ProFormCheckbox,
-  ProFormDatePicker,
-} from '@ant-design/pro-form';
+import ProForm, { ModalForm, ProFormCheckbox } from '@ant-design/pro-form';
 import { message, Row } from 'antd';
 import { useCreate, useGet } from '../../../../../api/request';
 
@@ -34,7 +30,7 @@ const AddBookListModal = () => {
 
   const { data: optionsData } = useGet<{
     data: { label: string; value: string }[];
-  }>('bookListQuery', 'v1/bookList/options');
+  }>('bookListQuery', '/v1/bookList/options');
 
   return (
     <>

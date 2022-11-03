@@ -26,4 +26,5 @@ export default {
   'borrow.top': 'Top书籍',
   'borrow.selectBookList': '选择收藏的书单',
   'borrow.collectSuccess': '收藏书单成功',
+  'borrow.addBookListSuccess': '添加书单成功',
 };

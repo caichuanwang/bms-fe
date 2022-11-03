@@ -45,7 +45,7 @@ const BookItem: React.FC<IBookItem> = (props) => {
 
   return (
     <>
-      <Badge.Ribbon text={<>收藏书单{count?.data.length}</>}>
+      <Badge.Ribbon text={<>收藏书单{count?.data?.length}</>}>
         <Card
           hoverable
           style={{ width: 200 }}

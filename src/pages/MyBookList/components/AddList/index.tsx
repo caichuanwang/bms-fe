@@ -28,7 +28,7 @@ const AddList = () => {
       time: moment().format('YYYY-MM-DDTHH:mm:ssZ'),
     });
     if (res) {
-      message.success(fm('borrow.tipSuccess'));
+      message.success(fm('borrow.addBookListSuccess'));
       handleCancel();
       refreshTable();
       return true;
