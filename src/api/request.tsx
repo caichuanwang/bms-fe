@@ -7,9 +7,7 @@ import qs from 'qs';
 import { http } from '../enum/httpStatus';
 import { Object2GetParams } from '../utils/url';
 
-console.log('baseurl:', import.meta.env.VITE_BASE_URL);
 export const axios = Axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL + '',
   timeout: 1000,
   headers: {
     'Content-Type': 'application/json',

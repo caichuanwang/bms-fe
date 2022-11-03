@@ -2,7 +2,6 @@ import React, { FC, useEffect, Suspense, useCallback, useState } from 'react';
 import { MenuList, MenuChild } from '@/models/menu.interface';
 import { useGuide } from '../guide/useGuide';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
-import { useGetCurrentMenus } from '@/api';
 import type { MenuDataItem } from '@ant-design/pro-layout';
 import ProLayout from '@ant-design/pro-layout';
 import {
@@ -23,6 +22,7 @@ import { ReactComponent as LogoSvg } from '@/assets/logo/react.svg';
 import styles from './index.module.less';
 import Footer from './components/Footer';
 import useUserRedux from './index.redux';
+import { mockMenuList as menuList } from '../../../mock/user';
 
 const history = createBrowserHistory();
 
@@ -36,8 +36,6 @@ export const IconMap: { [key: string]: React.ReactNode } = {
 };
 
 const LayoutPage: FC = ({ children }) => {
-  const { data: menuList, error } = useGetCurrentMenus();
-
   const [pathname, setPathname] = useState('/welcome');
   const { device, collapsed, newUser, settings, changeCollapsed } =
     useUserRedux();

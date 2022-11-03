@@ -2,15 +2,15 @@ import { MenuList } from '@/models/menu.interface';
 import { LoginParams, LoginResult } from '@/models/login';
 import { useBatch, useCreate, useGetList, useUpdate } from './request';
 
-const projectResource = '/projects';
+const projectResource = '/v1/projects';
 
 export const useLogin = () => {
-  return useCreate<LoginParams, LoginResult>('/login');
+  return useCreate<LoginParams, LoginResult>('/v1/login');
 };
 
-export const useGetCurrentMenus = () => {
-  return useGetList<MenuList>('currentMenu', '/current/menu');
-};
+// export const useGetCurrentMenus = () => {
+//   return useGetList<MenuList>('currentMenu', '/v1/current/menu');
+// };
 export const useGetProjects = (pagination: any, filters: any) => {
   return useGetList<API.ProjectPagination>(
     'Projects',

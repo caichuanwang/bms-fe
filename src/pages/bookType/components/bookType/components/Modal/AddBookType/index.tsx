@@ -47,7 +47,11 @@ const AddBookType = () => {
     id: number,
     list: IBookTypeTree[]
   ): IBookTypeTree | undefined => {
+    if (!id) {
+      return undefined;
+    }
     let res = list.find((item) => item.id == id);
+    console.log(id, list);
     if (res) {
       return res;
     } else {
@@ -111,12 +115,6 @@ const AddBookType = () => {
               treeLine: true,
               treeIcon: PlusCircleOutlined,
             }}
-            rules={[
-              {
-                required: true,
-                message: fm('global.placeholderSel') + fm('book.pId'),
-              },
-            ]}
           />
           <ProFormText
             width="sm"

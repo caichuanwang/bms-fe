@@ -8,7 +8,7 @@ export interface IMenuList {
   children?: Omit<IMenuList, 'children'>[];
 }
 
-const mockMenuList: IMenuList[] = [
+export const mockMenuList: IMenuList[] = [
   {
     path: '/',
     name: 'bookList',
@@ -223,13 +223,13 @@ export default [
   //     };
   //   },
   // },
-  {
-    url: '/api/current/menu',
-    method: 'post',
-    response: ({ body }) => {
-      return mockMenuList;
-    },
-  },
+  // {
+  //   url: '/v1/current/menu',
+  //   method: 'post',
+  //   response: ({ body }) => {
+  //     return mockMenuList;
+  //   },
+  // },
   // {
   //   url: '/api/v1/current/notice',
   //   method: 'get',

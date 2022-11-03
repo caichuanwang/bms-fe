@@ -128,12 +128,6 @@ const EditBookType = () => {
               treeLine: true,
               treeIcon: PlusCircleOutlined,
             }}
-            rules={[
-              {
-                required: true,
-                message: fm('global.placeholderSel') + fm('book.pId'),
-              },
-            ]}
           />
 
           <ProFormText

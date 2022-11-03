@@ -38,10 +38,10 @@ export default ({ command }: { command: string }) => {
     server: {
       open: true,
       proxy: {
-        '/api': {
-          target: 'http://127.0.0.1:8888',
+        '/v1': {
+          target: 'http://10.186.60.141:8888/',
           changeOrigin: true,
-          rewrite: (path: string) => path.replace(/^\/api/, ''),
+          // rewrite: (path: string) => path.replace(/^\/api/, ''),
         },
       },
     },
