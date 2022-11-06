@@ -27,6 +27,12 @@ export const tableHeaderColumns = (
     {
       dataIndex: 'level',
       title: fm('book.level'),
+      render: (dom, record) => {
+        if (dom === '0') {
+          return '顶级';
+        }
+        return dom;
+      },
     },
     {
       dataIndex: 'pName',

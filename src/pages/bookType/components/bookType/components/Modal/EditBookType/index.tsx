@@ -33,10 +33,17 @@ const EditBookType = () => {
         ...formData,
         pId: Number(formData.pId),
         level: String(
-          Number(
-            (findItemById(formData.pId, treeData as IBookTypeTree[]) ?? {})
-              .level
-          ) + 1
+          isNaN(
+            Number(
+              (findItemById(formData.pId, treeData as IBookTypeTree[]) ?? {})
+                .level
+            ) + 1
+          )
+            ? 0
+            : Number(
+                (findItemById(formData.pId, treeData as IBookTypeTree[]) ?? {})
+                  .level
+              ) + 1
         ),
         id: selectData?.id,
       },

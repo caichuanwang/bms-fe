@@ -29,10 +29,19 @@ const AddBookType = () => {
     const res = await addMu.mutateAsync({
       ...formData,
       level: String(
-        Number(
-          (findItemById(formData.pId, treeData.data as IBookTypeTree[]) ?? {})
-            .level
-        ) + 1
+        isNaN(
+          Number(
+            (findItemById(formData.pId, treeData.data as IBookTypeTree[]) ?? {})
+              .level
+          ) + 1
+        )
+          ? 0
+          : Number(
+              (
+                findItemById(formData.pId, treeData.data as IBookTypeTree[]) ??
+                {}
+              ).level
+            ) + 1
       ),
     });
     if (res) {
