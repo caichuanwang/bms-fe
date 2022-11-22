@@ -22,16 +22,12 @@ const LoginForm: FC = () => {
 
   const onFinished = async (form: LoginParams) => {
     const result: ILoginResult = await loginMutation.mutateAsync(form);
-
     if (result) {
       localStorage.setItem('token', result.data.token ?? '');
       localStorage.setItem('username', result.data.userName);
       localStorage.setItem('userId', result.data.userId);
       dispatch(setLogged(true));
-      const from = (location.state as { from: string })?.from || {
-        pathname: '/bookList',
-      };
-      navigate(from);
+      window.location.href = '/bookList';
     }
   };
 

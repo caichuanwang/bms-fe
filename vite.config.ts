@@ -39,7 +39,7 @@ export default ({ command }: { command: string }) => {
       open: true,
       proxy: {
         '/v1': {
-          target: 'http://10.186.60.141:8888/',
+          target: 'http://10.186.60.129:8888/',
           changeOrigin: true,
           // rewrite: (path: string) => path.replace(/^\/api/, ''),
         },

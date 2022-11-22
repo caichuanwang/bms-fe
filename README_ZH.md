@@ -1,4 +1,6 @@
-# 全新技术栈管理系统
+# 图书管理系统
+
+这是图书管理系统的前端代码仓库，[后端可以点击这里](https://github.com/caichuanwang/bookManagerSystem)。
 
 全新技术栈的后台管理系统
 
@@ -9,12 +11,13 @@
 - Vite
 - Typescript
 
-## [Document](./README.md)
-
 ## 截图
 
-![](./screenshot1.png)
-![](./screenshot2.png)
+![image-20221122161036195](http://gicgo-images.oss-cn-shanghai.aliyuncs.com/img/image-20221122161036195.png)
+
+![image-20221122161102987](http://gicgo-images.oss-cn-shanghai.aliyuncs.com/img/image-20221122161102987.png)
+
+![image-20221122161123307](http://gicgo-images.oss-cn-shanghai.aliyuncs.com/img/image-20221122161123307.png)
 
 ## 安装使用
 
@@ -37,7 +40,7 @@
 - 运行
 
 ```
- yarn dev
+ yarn start
 ```
 
 - 打包
@@ -69,3 +72,5 @@
 ## License
 
 [MIT](./LICENSE)
+
+Copyright (c) 2022 caichuanwang
